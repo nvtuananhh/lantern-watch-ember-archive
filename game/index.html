@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Lantern Watch: The Ember Archive — a stealth game</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0b0806; height: 100%; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  canvas {
+    display: block;
+    width: min(1280px, 100vw);
+    height: auto;
+    max-height: 100vh;
+    background: #120d08;
+    image-rendering: auto;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="720" aria-label="Lantern Watch: The Ember Archive, a top-down stealth game"></canvas>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
