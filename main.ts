@@ -6,7 +6,7 @@
 // identical bytes both times, so everything here is sorted, synchronous,
 // and free of timestamps, randomness, and environment-dependent order.
 
-import { copyFileSync, lstatSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, lstatSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-game.ts';
@@ -51,7 +51,6 @@ function copyDirectoryTree(sourceDir: string, targetDir: string): void {
 
 function handIn(): void {
   const outDir = outputDirectory();
-  rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
   copyDirectoryTree(join(REPO_ROOT, 'game'), join(outDir, 'game'));
   copyDirectoryTree(join(REPO_ROOT, 'screenshots'), join(outDir, 'screenshots'));
